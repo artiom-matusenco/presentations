@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
 
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -174,8 +176,8 @@
 					<h3>Things we will talk about today</h3>
 					<ul>
 						<li class="fragment">Connecting to hardware</li>
-						<li class="fragment">WebAssembly</li>
 						<li class="fragment">WebGL</li>
+						<li class="fragment">WebAssembly</li>
 						<li class="fragment">WebVR</li>
 					</ul>
 				</section>
@@ -246,38 +248,6 @@
 								<img data-src="img/orientation.gif" />
 							</div>
 						</div>
-					</section>
-				</section>
-
-				<!-- Web Assembly -->
-				<section>
-					<section>
-						<h1>Web Assembly</h1>
-					</section>
-
-					<section>
-						<div style="text-align:right; font-size:20px;">Web Assembly</div>
-						<h3>Key points:</h3>
-						<ul>
-							<li class="fragment">It is a binary format produced by a compiler (not a programming language)</li>
-							<li class="fragment">Is focused on C/C++ (Emscripten compiler)</li>
-							<li class="fragment">Fully integrates with JavaScript</li>
-							<li class="fragment">Uses  WebAPI directly</li>
-							<li class="fragment">Works in the same context/thread as other JavaScript code.</li>
-							<li class="fragment">Runs in a sandbox, so it is secure</li>
-						</ul>
-						<br />
-						<h4 class="fragment"><a href="http://webassembly.org/demo/Tanks/">WebAssembly official demo.</a></h4>
-					</section>
-					<section>
-						<h3>How Does WebAssembly Work?</h3>
-						<img src="img/wasm-chain.png" />
-					</section>
-					<section>
-						<h3>Getting Started</h3>
-						<a href="http://webassembly.org/getting-started/developers-guide/">
-							http://webassembly.org/getting-started/developers-guide/
-						</a>
 					</section>
 				</section>
 
@@ -604,6 +574,39 @@ gl.drawArrays(gl.GL_TRIANGLES, 0, 3);
 					</section>
         </section>
 
+				<!-- Web Assembly -->
+				<section>
+					<section>
+						<h1>Web Assembly</h1>
+					</section>
+
+					<section>
+						<div style="text-align:right; font-size:20px;">Web Assembly</div>
+						<h3>Key points:</h3>
+						<ul>
+							<li class="fragment">It is a binary format produced by a compiler (not a programming language)</li>
+							<li class="fragment">Is focused on C/C++ (Emscripten compiler)</li>
+							<li class="fragment">Fully integrates with JavaScript</li>
+							<li class="fragment">Uses WebAPI directly</li>
+							<li class="fragment">Works in the same context/thread as other JavaScript code.</li>
+							<li class="fragment">Runs in a sandbox, so it is secure</li>
+						</ul>
+						<br />
+						<h4 class="fragment">
+							<a href="http://webassembly.org/demo/Tanks/">WebAssembly official demo.</a>
+						</h4>
+					</section>
+					<section>
+						<h3>How Does WebAssembly Work?</h3>
+						<img src="img/wasm-chain.png" />
+					</section>
+					<section>
+						<h3>Getting Started</h3>
+						<a href="http://webassembly.org/getting-started/developers-guide/">
+							http://webassembly.org/getting-started/developers-guide/
+						</a>
+					</section>
+				</section>
 
 
 				<!-- WebVR -->
@@ -665,7 +668,8 @@ gl.drawArrays(gl.GL_TRIANGLES, 0, 3);
 								<span>Frontend developer<br>artiom.matusenco@ellation.com</span>
 							</div>
 							<div>
-								<img style="width: 300px; border: none;" data-src="img/ellation-logo.png" />
+								<img
+									style="width: 250px; border: none; background: none; box-shadow: none;" data-src="img/ellation-logo.png" />
 							</div>
 					</div>
 
