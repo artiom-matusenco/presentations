@@ -180,7 +180,7 @@
 				<section data-background-color="#fff">
 					<h3>Things we will talk about today</h3>
 					<ul>
-						<li class="fragment">Connecting to hardware</li>
+						<!-- <li class="fragment">Connecting to hardware</li> -->
 						<li class="fragment">WebGL</li>
 						<li class="fragment">WebAssembly</li>
 						<li class="fragment">WebVR</li>
@@ -188,14 +188,37 @@
 				</section>
 
 				<!-- Connecting to hardware -->
-				<section>
+				<!-- <section>
 					<section data-transition="slide">
 						<h1>Connecting to hardware</h1>
+						<h3>Generic Sensor API</h3>
 					</section>
 
 					<section>
-						<h1>Generic Sensor API Key points:</h1>
-						<h5>Currently in Chrome</h5>
+						<h1>What is Generic Sensor API</h1>
+						<p>The Generic Sensor API is a set of interfaces which expose sensor devices to the web platform.</p>
+					</section>
+
+					<section>
+						<h3>Use cases</h3>
+						<ul>
+							<li>Immersive gaming</li>
+							<li>Fitness tracking</li>
+							<li>Augmented or Virtual Reality</li>
+							<li>Navigation</li>
+							<li>Gesures controle</li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>Key points</h1>
+						<ul>
+							<li>Immersive gaming</li>
+							<li>Fitness tracking</li>
+							<li>Augmented or Virtual Reality</li>
+							<li>Navigation</li>
+							<li>Gesures controle</li>
+						</ul>
 					</section>
 
 					<section>
@@ -254,7 +277,7 @@
 							</div>
 						</div>
 					</section>
-				</section>
+				</section> -->
 
 				<!-- WebGL -->
 				<section>
@@ -265,17 +288,19 @@
 						</div>
 					</section>
 					<section>
-						<div style="text-align:right; font-size:20px;">Web Assembly</div>
 						<h3>What is Web Graphics Library (WebGL)?</h3>
 						<ul style="font-size: 30px">
 							<li>
 								<b>WebGL</b> - a Web API for rendering 3D graphics within web browser
 							</li>
 							<li>
-								No plug-ins
+								Open Standard maintained by the Khronos Group
 							</li>
 							<li>
-								GPU accelerated usage image processing as part of the web page canvas
+								No plug-ins, based on OpenGL
+							</li>
+							<li>
+								GPU accelerated image processing as part of the web page canvas
 							</li>
 							<li>
 								Can be mixed with other HTML elements
@@ -286,300 +311,54 @@
 							<li>
 								GLSL is executed on a computer's graphics processing unit (GPU)
 							</li>
-					</section>
-
-					<section>
-						<h1>Draw Something</h1>
-						<aside class="notes">
-								<ul>
-										<li>
-												I denne seksjonen skal vi se på ett litt mer meningsfylt eksempel, vi skal tegne en trekant!
-										</li>
-										<li>
-												Det er fortsatt et enkelt eksempel, men som vi skal se, så kreves det litt arbeid for å
-												faktisk kunne tegne en trekant
-										</li>
-										</li>
-								</ul>
-						</aside>
+							<li>
+								First version shipped in 2011
+							</li>
 					</section>
 					<section>
-							<h2>Draw A Triangle</h2>
-							<iframe data-src="webgl/webgl_triangle/index.html" width="400" height="400"></iframe>
+						<h3>Use cases of WebGL</h3>
+						<ul style="font-size: 30px">
+							<li>
+								Art
+							</li>
+							<li>
+								Games
+							</li>
+							<li>
+								<a href="http://carvisualizer.plus360degrees.com/threejs/" >Presentation focused websites</a>
+							</li>
 					</section>
 					<section>
-							<h2>
-									Low Level API
-							</h2>
-							<ul>
-									<li>
-											WebGL is designed
-											<ul>
-													<li>
-															To work directly with your GPU
-													</li>
-													<li>
-															So that you can build higher level libraries upon it
-													</li>
-											</ul>
-									</li>
-							</ul>
-					</section>
-					<section>
-							<h2>
-									How To Draw A Triangle?
-							</h2>
-							<p>
-									<img src="images/vertices2.png">
-							</p>
-							<ul>
-									<li>
-											The basic idea is to send a list of vertices to the GPU for drawing
-									</li>
-									<li>
-											A triangle is defined by three vertices (corner points)
-									</li>
-							</ul>
-					</section>
-					<section>
-							<h2>
-									Graphical Pipeline
-							</h2>
-							<p>
-									<img class="blackBackground" src="images/webgl-workflow-2_2.png">
-							</p>
-							<aside class="notes">
-							</aside>
-					</section>
-					<section>
-							<h2>
-									Programmable pipeline
-							</h2>
-							<p>
-									<img class="blackBackground" src="images/webgl-workflow-3_3.png">
-							</p>
-					</section>
-					<section>
-							<h2>What Are Shaders?</h2>
-							<ul>
-									<li>Small "programs" that runs on the GPU</li>
-									<li>Have a well-defined set of input/output values, some built-in and some user-defined</li>
-									<li>Written in OpenGL Shading Language (GLSL)</li>
-									<li>GLSL syntax is kinda like C</li>
-									<li>Generally regarded as fairly advanced, but it is actually much simpler than it looks</li>
-							</ul>
-					</section>
-					<section>
-							<h2>
-									Shader Effect Examples
-							</h2>
-							<p>
-									<iframe data-src="http://www.dasprinzip.com/pExamples/raymarcher03.htm" width="400"
-													height="400"></iframe>
-									<iframe data-src="http://www.dasprinzip.com/pExamples/raymarcher01.htm" width="400"
-													height="400"></iframe>
-							</p>
-							<ul>
-									<li>
-											Shaders can be used to create cool effects like lightning, shadowing, refraction, and more
-									</li>
-							</ul>
-							<p>
-									<a class="reference"
-											href="http://www.dasprinzip.com/prinzipiell/2011/02/21/raymarching/">Reference</a>
-							</p>
-					</section>
-					<section>
-						<h2>Shaders In WebGL</h2>
+						<h2>What Are Shaders?</h2>
 						<ul>
-								<li>There are two shader types (two stages of the pipeline are programmable):
-										<ul>
-												<li>
-														A vertex shader (process vertices)
-												</li>
-												<li>
-														A fragment shader (process fragments/pixels)
-												</li>
-										</ul>
-								</li>
-								<li>You will need both shaders in order to draw anything on the screen</li>
-								<li>For standard usage, these shaders are quite simple</li>
-								<li>No default shaders</li>
-								<li>You need to write your own shaders or use one provided by a WebGL library (copy and paste)</li>
+							<li>Small "programs" that runs on the GPU</li>
+							<li>Have a well-defined set of input/output values, some built-in and some user-defined</li>
+							<li>Written in OpenGL Shading Language (GLSL)</li>
+							<li>GLSL syntax is kinda like C</li>
+							<li>Generally regarded as fairly advanced, but it is actually much simpler than it looks</li>
 						</ul>
 					</section>
 					<section>
-							<h2>Simplified WebGL Pipeline</h2>
-							<p>
-									<img class="blackBackground" src="images/webgl-workflow.png">
-							</p>
-							<p>
-									<a class="reference" href="http://third-dimension-webgl-threejs.herokuapp.com/">Reference</a>
-							</p>
+						<h2>
+							Shader Effect Examples
+						</h2>
+						<p>
+							<iframe data-src="http://www.dasprinzip.com/pExamples/raymarcher03.htm" width="400" height="400"></iframe>
+							<iframe data-src="http://www.dasprinzip.com/pExamples/raymarcher01.htm" width="400" height="400"></iframe>
+						</p>
+						<ul>
+							<li>
+								Shaders can be used to create cool effects like lightning, shadowing, refraction, and more
+							</li>
+						</ul>
 					</section>
 					<section>
-							<h2>Create A Buffer</h2>
-							<p>
-							<ul>
-									<li>
-											That contains the three vertices (corners) of the triangle
-									</li>
-							</ul>
-							</p>
-							<pre><code contenteditable>
-function createBuffer(gl) {
-// Create buffer
-var vertexPositionBuffer = gl.createBuffer();
-// Activate buffer
-gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
-var triangleVertices = [
-	-0.5, -0.5,
-		0.5, -0.5,
-		0.0, 0.5
-];
-// Copy vertices to buffer (on the GPU)
-gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(triangleVertices), gl.STATIC_DRAW);
-return vertexPositionBuffer;
-}
-					</code></pre>
-					</section>
-					<section>
-							<h2>A Simple Vertex Shader</h2>
-							<ul>
-									<li>
-											Executed 3 times, once for every vertex of the triangle
-									</li>
-									<li>
-											Its job is to set something called gl_Position, the final position of a vertex on the viewport
-											(i.e. screen)
-									</li>
-							</ul>
-							<pre><code contenteditable>
-&lt;script id="vertex" type="x-shader"&gt;
-attribute vec2 vertexPosition;
-void main() {
-	gl_Position = vec4(vertexPosition, 0, 1); //xyzw
-}
-&lt;/script&gt;
-					</code></pre>
-					</section>
-					<section>
-							<h2>A Simple Fragment Shader</h2>
-							<ul>
-									<li>
-											Executed once for every pixel covered by the triangle
-									</li>
-									<li>
-											The GPU figures out which pixels on the screen that are covered by the triangle
-									</li>
-									<li>
-											Its job is to set something called gl_FragColor, the final colour of a pixel
-									</li>
-							</ul>
-							<pre><code contenteditable>
-&lt;script id="fragment" type="x-shader"&gt;
-void main() {
-	// Just apply the same color (rgba) to every pixel covered by the triangle
-	gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
-}
-&lt;/script&gt;
-					</code></pre>
-					</section>
-					<section>
-							<h2>Create And Compile Shaders</h2>
-							<pre><code contenteditable>
-function createShader(str, type) {
-var shader = gl.createShader(type);
-gl.shaderSource(shader, str);
-gl.compileShader(shader);
-return shader;
-}
-var vertexShader = createShader(document.getElementById("vertex").innerHTML, gl.VERTEX_SHADER);
-var fragmentShader = createShader(document.getElementById("fragment").innerHTML, gl.FRAGMENT_SHADER);
-						</code></pre>
-							<aside class="notes">
-							</aside>
-					</section>
-					<section>
-							<h2>Create A Shader Program</h2>
-							<ul>
-									<li>
-											The vertex shader and fragment shader are linked together into a shader program (or just
-											program)
-									</li>
-							</ul>
-							<pre><code contenteditable>
-function createShaderProgram(gl, vertexShader, fragmentShader) {
-// A program consists of a vertex and fragment shader
-var program = gl.createProgram();
-gl.attachShader(program, vertexShader);
-gl.attachShader(program, fragmentShader);
-gl.linkProgram(program);
-// Set the specified program as the currently active program
-gl.useProgram(program);
-return program;
-}
-						</code></pre>
-							<aside class="notes">
-							</aside>
-					</section>
-					<section>
-							<h2>Vertex Shader Attributes</h2>
-							<ul>
-									<li>
-											Attributes is input to the vertex shader
-									</li>
-									<li>
-											Each vertex normally has a set of attributes associated with it;
-											<ul>
-													<li>
-															Position
-													</li>
-													<li>
-															Color
-													</li>
-													<li>
-															Normal
-													</li>
-											</ul>
-									</li>
-							</ul>
-							<pre><code contenteditable>
-function vertexShaderAttributes(gl, shaderProgram, vertexPositionBuffer) {
-// Make the vertices available to the vertex shaders
-shaderProgram.vertexPositionAttrb = gl.getAttribLocation(shaderProgram, 'vertexPosition');
-gl.enableVertexAttribArray(shaderProgram.vertexPositionAttrb);
-gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
-gl.vertexAttribPointer(shaderProgram.vertexPositionAttrb, 2, gl.FLOAT, false, 0, 0);
-}
-						</code></pre>
-					</section>
-					<section>
-							<h2>Draw The Triangle</h2>
-							<pre><code class="javascript" contenteditable>
-gl.drawArrays(gl.GL_TRIANGLES, 0, 3);
-					</code></pre>
-							<ul>
-									<li>
-											Draw a triangle using GL_TRIANGLES primitive, it treats each triplet of vertices as an independent triangle.
-									</li>
-									<li>
-											Primitive is important parameter since it determines how many triangles will be generated
-									</li>
-							</ul>
-							<p>
-									<img src="images/gl-primitives.png">
-							</p>
-					</section>
-					<section>
-							<h2>
-									The Result
-							</h2>
-							<iframe data-src="webgl/webgl_triangle/index.html" width="400" height="400"></iframe>
-							<p>
-									<a href="https://github.com/eoaksnes/introduction-to-webgl/blob/master/webgl/webgl_triangle/index.html"
-											target="_blank">The code!</a>
-							</p>
+						<h3>Getting Started</h3>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL">
+							 Getting_started_with_WebGL | MDN
+						</a>
+						<br />
+						<a href="https://gist.github.com/dmnsgn/76878ba6903cf15789b712464875cfdc">WebGL Frameworks</a>
 					</section>
         </section>
 
@@ -595,7 +374,6 @@ gl.drawArrays(gl.GL_TRIANGLES, 0, 3);
 					</section>
 
 					<section>
-						<div style="text-align:right; font-size:20px;">Web Assembly</div>
 						<h3>Key points:</h3>
 						<ul>
 							<li class="fragment">It is a binary format produced by a compiler (not a programming language)</li>
@@ -605,10 +383,6 @@ gl.drawArrays(gl.GL_TRIANGLES, 0, 3);
 							<li class="fragment">Works in the same context/thread as other JavaScript code.</li>
 							<li class="fragment">Runs in a sandbox, so it is secure</li>
 						</ul>
-						<br />
-						<h4 class="fragment">
-							<a href="http://webassembly.org/demo/Tanks/">WebAssembly official demo.</a>
-						</h4>
 					</section>
 					<section>
 						<h3>How Does WebAssembly Work?</h3>
@@ -650,24 +424,27 @@ gl.drawArrays(gl.GL_TRIANGLES, 0, 3);
 					</section>
 
 					<section>
-						<h3>Samples</h3>
-						<a href="https://webvr.info/samples/"> https://webvr.info/samples </a>
-						<a href="https://www.youtube.com/watch?v=N8_ntIUfdW0">
-							360 VR footage of the Milky Way over Knob Lakes Alaska.
+						<h2>Frameworks and libraries</h2>
+
+						<div style="text-align: left" >
+						<h4>A-Frame </h4>
+						<p>
+							 A-Frame is one of the largest and most welcoming VR communities. It is developed by Mozilla.
+						</p>
+						<a href="https://aframe.io/">https://aframe.io/</a>
+
+						<h4 style="margin-top:30px">React VR</h4>
+						<p>Build VR websites and interactive 360 experiences with React</p>
+						<a href="https://facebook.github.io/react-vr/" > https://facebook.github.io/react-vr/ </a>
+						</div>
+					</section>
+
+					<section>
+						<h3>Getting Started</h3>
+						<a href="https://developers.google.com/web/fundamentals/vr/getting-started-with-webvr/">
+							Getting_started_with_WebGL | Google Web Fundamentals
 						</a>
 					</section>
-
-					<section>
-						<h1>React VR</h1>
-						<h4>Build VR websites and interactive 360 experiences with React</h4>
-					</section>
-
-					<section>
-						React VR lets you build VR apps using only JavaScript. It uses the same design as React, letting you compose a rich VR world and UI from declarative components.
-
-						<a href="https://facebook.github.io/react-vr/" > https://facebook.github.io/react-vr/ </a>
-					</section>
-
 
 				</section>
 
